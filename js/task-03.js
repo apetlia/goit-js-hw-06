@@ -13,24 +13,23 @@ const images = [
   },
 ];
 
-const imagesHTML = images.reduce((result, item) => {
+const imagesHtmlMarkup = images.reduce((result, item) => {
   const template = `<li><img src="${item.url}" alt="${item.alt}" width="320" height="240"></li>`;
 
   return result + template;
 }, "");
 
-const galleryEl = document.querySelector(".gallery");
+const galleryRef = document.querySelector(".gallery");
 
-galleryEl.insertAdjacentHTML("beforeend", imagesHTML);
+galleryRef.insertAdjacentHTML("beforeend", imagesHtmlMarkup);
 
-const style = document.createElement("style");
-
-style.textContent = `
+const headCSS = `
+<style>
 .gallery {
   list-style-type: none;
   display: flex;
   gap: 20px;
 }
-`;
+</style>`;
 
-document.head.append(style);
+document.head.insertAdjacentHTML("beforeend", headCSS);

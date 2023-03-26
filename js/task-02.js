@@ -1,6 +1,6 @@
 const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Condiments"];
 
-const ingredientsEl = document.querySelector("#ingredients");
+const ingredientsRef = document.querySelector("#ingredients");
 
 const listOfLi = ingredients.map(item => {
   const li = document.createElement("li");
@@ -10,4 +10,4 @@ const listOfLi = ingredients.map(item => {
   return li;
 });
 
-ingredientsEl.append(...listOfLi);
+ingredientsRef.append(...listOfLi);
